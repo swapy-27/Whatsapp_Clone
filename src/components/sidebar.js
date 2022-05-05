@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/sidebar.css';
+import '../css/sidebar.css';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import { Avatar, IconButton } from '@mui/material';
 import ChatIcon from '@mui/icons-material/Chat';

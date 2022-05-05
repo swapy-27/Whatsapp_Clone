@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/chat.css'
+import '../css/chat.css'
 import { Avatar, IconButton } from '@mui/material';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -65,8 +65,9 @@ function Chat() {
                     <EmojiEmotionsIcon />
                 </IconButton>
 
-                <form>
 
+                {/* this form should send a post request */}
+                <form>
                     <input placeholder='Type a message' type='text' />
                     <button type='submit'>Send </button>
 
