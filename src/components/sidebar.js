@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/sidebar.css';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import { Avatar, IconButton } from '@mui/material';
@@ -6,7 +6,15 @@ import ChatIcon from '@mui/icons-material/Chat';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SidebarChat from './sidebarchat';
+import { getRoomsData } from '../api';
 function Sidebar() {
+    const [rooms, setRooms] = useState([]);
+
+    useEffect(() => {
+        const rooms_data = getRoomsData();
+        setRooms(rooms_data);
+
+    }, [])
 
     return (
         <div className='sidebar'>
@@ -19,9 +27,11 @@ function Sidebar() {
                     <IconButton>
                         <DonutLargeIcon />
                     </IconButton>
+
                     <IconButton>
                         <ChatIcon />
                     </IconButton>
+
                     <IconButton>
                         <MoreVertIcon />
                     </IconButton>
@@ -43,10 +53,12 @@ function Sidebar() {
 
 
             <div className='sidebar_chats'>
-
-                <SidebarChat/>
-                <SidebarChat/>
-                <SidebarChat/>
+                {/* {rooms.map((rooms_data)=>{
+                    return <SidebarChat props={rooms_data}/>
+                })} */}
+                <SidebarChat />
+                <SidebarChat />
+                <SidebarChat />
 
             </div>
 

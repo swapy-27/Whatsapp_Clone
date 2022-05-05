@@ -1,7 +1,8 @@
 import React from 'react';
 import '../css/sidebarChat.css'
 import { Avatar } from '@mui/material';
-function SidebarChat() {
+const  SidebarChat=(props)=> {
+    const rooms_data = props.rooms_data;
 
     return (
 
