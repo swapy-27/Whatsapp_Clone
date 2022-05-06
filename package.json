@@ -19,6 +19,7 @@
   "homepage": "https://github.com/swapy-27/Whatsapp_Clone#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.2",
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",

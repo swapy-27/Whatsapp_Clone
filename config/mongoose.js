@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 
 
+
+
+
 //connect the database
-mongoose.connect('mongodb://localhost:27017/Whatsapp_Clone');
+mongoose.connect('mongodb://localhost:27017/chat_engine');
 
 //acquire connection (to check it successful)
 const db = mongoose.connection;

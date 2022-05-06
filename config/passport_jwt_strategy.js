@@ -11,7 +11,7 @@ let opts ={}
 opts.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
 
 //encrypt web token  using this secret key 
-opts.secretOrKey = 'codial';
+opts.secretOrKey = 'swapnil';
 
 
 passport.use(new JWTstrategy(opts, function(jwt_payload, done) {
