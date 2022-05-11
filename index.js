@@ -9,14 +9,14 @@ const passport = require('passport');
 
 app.use(express.json());
 
-app.use('/',require('./routes'));
+app.use('/', require('./routes'));
 
 
-app.listen(port,(err)=>{
-    if (err){
-            console.log('error in starting app ',err);
-            }
-            console.log('server is up and running',port);
+app.listen(port, (err) => {
+    if (err) {
+        console.log('error in starting app ', err);
+    }
+    console.log('server is up and running', port);
 })
 
 
