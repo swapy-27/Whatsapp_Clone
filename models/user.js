@@ -8,9 +8,13 @@ const userSchema = mongoose.Schema(
             required: true,
             unique: true
         },
-        password: {
+        hashKey: {
             type: String,
             required: true
+        },
+        saltKey:{
+            type:String,
+            required:true
         },
         name: {
             type: String,
