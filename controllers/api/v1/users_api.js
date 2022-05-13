@@ -11,19 +11,31 @@ module.exports.createSession = async (req, res) => {
     try {
         let user = await User.findOne({ email: req.body.email });
 
-
-        if (!user || user.password !== req.body.password) {
+        if (!user) {
             return res.status(422).json({
                 message: "Invalid username or password"
             })
         }
+        else {
+            const saltKey = user.saltKey
+            const hashKey = user.hashKey
+            const currHashKey = utilFunctions.hashKey(req.body.password, saltKey)
 
-        return res.status(200).json({
-            message: 'sign In successful',
-            data: {
-                token: jsonwebtoken.sign(user.toJSON(), 'swapnil', { expiresIn: 30000 })
+            if (hashKey != currHashKey) {
+                return res.status(422).json({
+                    message: "Invalid username or password"
+                })
             }
-        })
+            return res.status(200).json({
+                message: 'sign In successful',
+                data: {
+                    token: jsonwebtoken.sign(user.toJSON(), 'swapnil', { expiresIn: 30000 })
+                }
+            })
+           
+        }
+
+
     }
     catch (err) {
         console.log('*****', err)

@@ -4,8 +4,8 @@ const app = express();
 const mongoose = require('mongoose');
 
 const db = require('./config/mongoose')
-const passport = require('passport');
-// const JWTstrategy = require('./config/passport_jwt_strategy');
+
+const JWTstrategy = require('./config/passport_jwt_strategy');
 
 const bodyParser = require ( 'body-parser')
 app.use(bodyParser.urlencoded({ extended: true }));

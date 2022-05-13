@@ -4,7 +4,7 @@ const router = express.Router();
 
 const userApi = require ('../../../controllers/api/v1/users_api');
 
-router.get('/create-session',userApi.createSession);
+router.post('/create-session',userApi.createSession);
 router.post('/sign-up',userApi.createUser)
 
 module.exports= router;

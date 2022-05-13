@@ -1,11 +1,14 @@
 const passport = require('passport')
-const JWTstrategy = require('passport-jwt').Strategy();
 
-const ExtractJWT = require('passport-jwt').ExtractJwt();
+const JWTstrategy = require('passport-local').Strategy;
+
+const ExtractJWT = require('passport-jwt').ExtractJwt;
 
 const User = require('../models/user')
 
-let opts ={}
+
+module.exports=function(passport){
+    let opts ={}
 
 // extracts web token from header of request
 opts.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
@@ -28,5 +31,7 @@ passport.use(new JWTstrategy(opts, function(jwt_payload, done) {
         }
     })
 }));
+}
 
-module.exports=passport;
+
+// module.exports=JWTstrategy;
